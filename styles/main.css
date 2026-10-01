@@ -1,0 +1,1184 @@
+/* =========================================================
+   SUNY NEW PALTZ
+   Shared Stylesheet
+   Used by: Home / Why New Paltz + Academics
+   ========================================================= */
+
+
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+  --green: #123f2d;
+  --dark: #08251a;
+  --gold: #f4c542;
+
+  --cream: #f7f5ed;
+  --light: #eef4f0;
+  --white: #ffffff;
+
+  --text: #26332c;
+  --muted: #66736c;
+  --border: #dce5df;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--dark);
+  color: var(--white);
+
+  padding: 18px 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 72vh;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 32, 22, 0.95),
+      rgba(12, 63, 43, 0.78),
+      rgba(12, 63, 43, 0.30)
+    ),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85")
+    center / cover;
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  padding: 80px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+
+  max-width: 850px;
+
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 700px;
+
+  font-size: 1.2rem;
+
+  color: #e8f0eb;
+
+  margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button {
+  display: inline-block;
+
+  padding: 14px 25px;
+
+  border-radius: 5px;
+
+  font-weight: bold;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.primary:hover {
+  background: #ffd85c;
+}
+
+.secondary {
+  border: 2px solid var(--white);
+  color: var(--white);
+
+  margin-left: 10px;
+}
+
+.secondary:hover {
+  background: var(--white);
+  color: var(--green);
+}
+
+
+/* =========================================================
+   SHARED SECTION STYLES
+   ========================================================= */
+
+.section-title {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+}
+
+.section-title h2 {
+  color: var(--green);
+
+  font-size: 2.8rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--muted);
+  max-width: 720px;
+}
+
+
+/* =========================================================
+   INTRO
+   Used by both pages
+   ========================================================= */
+
+.intro {
+  padding: 90px 7%;
+  background: var(--cream);
+}
+
+.intro-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.intro h2 {
+  color: var(--green);
+
+  font-size: 3rem;
+
+  line-height: 1.1;
+}
+
+.intro p {
+  color: var(--muted);
+
+  margin-bottom: 15px;
+
+  font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   WHY NEW PALTZ - REASONS
+   ========================================================= */
+
+.reasons {
+  padding: 90px 7%;
+  background: var(--white);
+}
+
+.reason-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.reason {
+  padding: 35px;
+
+  border-radius: 10px;
+
+  background: var(--light);
+
+  display: grid;
+
+  grid-template-columns: 65px 1fr;
+
+  gap: 20px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reason:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.reason-number {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+  color: var(--gold);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.reason h3 {
+  color: var(--green);
+
+  font-size: 1.35rem;
+
+  margin-bottom: 8px;
+}
+
+.reason p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   NUMBERS / STATISTICS
+   Used by both pages
+   ========================================================= */
+
+.numbers {
+  padding: 70px 7%;
+
+  background: var(--green);
+
+  color: var(--white);
+}
+
+.numbers-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  text-align: center;
+}
+
+.number {
+  font-size: 2.8rem;
+
+  color: var(--gold);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  margin-bottom: 10px;
+}
+
+.number-label {
+  color: #e2ece6;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   ACADEMICS PAGE
+   ========================================================= */
+
+
+/* ---------------- Academic Programs ---------------- */
+
+.programs {
+  padding: 90px 7%;
+  background: var(--white);
+}
+
+.program-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.program-card {
+  padding: 35px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  background: var(--white);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+
+  border-color: var(--green);
+}
+
+.program-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+  color: var(--gold);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+
+  margin-bottom: 20px;
+}
+
+.program-card h3 {
+  color: var(--green);
+
+  font-size: 1.4rem;
+
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+}
+
+.program-card a {
+  color: var(--green);
+
+  font-weight: bold;
+
+  transition: color 0.2s ease;
+}
+
+.program-card a:hover {
+  color: #8c7000;
+}
+
+
+/* =========================================================
+   ACADEMICS / LEARNING IMAGE SECTION
+   ========================================================= */
+
+.learning {
+  padding: 90px 7%;
+
+  background: var(--light);
+}
+
+.learning-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.learning-image {
+  min-height: 500px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      rgba(18, 63, 45, 0.10),
+      rgba(18, 63, 45, 0.10)
+    ),
+    url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85")
+    center / cover;
+}
+
+.learning-text h2 {
+  color: var(--green);
+
+  font-size: 2.8rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 18px;
+}
+
+.learning-text p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+}
+
+.learning-list {
+  list-style: none;
+
+  margin-top: 25px;
+}
+
+.learning-list li {
+  padding: 14px 0;
+
+  border-bottom: 1px solid #d2ddd6;
+
+  font-weight: 600;
+}
+
+.learning-list li::before {
+  content: "✓";
+
+  color: var(--green);
+
+  font-weight: bold;
+
+  margin-right: 12px;
+}
+
+
+/* =========================================================
+   ACADEMICS EXPERIENCE
+   ========================================================= */
+
+.experience {
+  padding: 90px 7%;
+
+  background: var(--white);
+}
+
+.experience-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.experience-card {
+  background: var(--cream);
+
+  padding: 32px;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+.experience-card .emoji {
+  font-size: 2rem;
+
+  margin-bottom: 15px;
+}
+
+.experience-card h3 {
+  color: var(--green);
+
+  margin-bottom: 10px;
+
+  font-size: 1.3rem;
+}
+
+.experience-card p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   ACADEMIC APPROACH
+   ========================================================= */
+
+.approach {
+  padding: 90px 7%;
+
+  background: var(--cream);
+}
+
+.approach-container {
+  max-width: 1100px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.approach h2 {
+  color: var(--green);
+
+  font-size: 2.8rem;
+
+  margin-bottom: 15px;
+}
+
+.approach-intro {
+  max-width: 720px;
+
+  margin: 0 auto 45px;
+
+  color: var(--muted);
+}
+
+.approach-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+
+  text-align: left;
+}
+
+.approach-card {
+  background: var(--white);
+
+  padding: 30px;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+.approach-card span {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+  color: var(--gold);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+}
+
+.approach-card h3 {
+  color: var(--green);
+
+  margin-bottom: 8px;
+}
+
+.approach-card p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   WHY NEW PALTZ - ACADEMICS SECTION
+   ========================================================= */
+
+.academics {
+  padding: 90px 7%;
+
+  background: var(--white);
+}
+
+.academic-layout {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.academic-image {
+  min-height: 480px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      rgba(18, 63, 45, 0.12),
+      rgba(18, 63, 45, 0.12)
+    ),
+    url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85")
+    center / cover;
+}
+
+.academic-text h2 {
+  color: var(--green);
+
+  font-size: 2.7rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 18px;
+}
+
+.academic-text p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+}
+
+.academic-list {
+  list-style: none;
+
+  margin-top: 25px;
+}
+
+.academic-list li {
+  padding: 12px 0;
+
+  border-bottom: 1px solid #ddd;
+
+  font-weight: 600;
+}
+
+.academic-list li::before {
+  content: "✓";
+
+  color: var(--green);
+
+  margin-right: 12px;
+}
+
+
+/* =========================================================
+   WHY NEW PALTZ - LOCATION
+   ========================================================= */
+
+.location {
+  padding: 90px 7%;
+
+  background: var(--cream);
+}
+
+.location-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+.location-text h2 {
+  color: var(--green);
+
+  font-size: 2.7rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+}
+
+.location-text p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+}
+
+.location-box {
+  background: var(--green);
+
+  color: var(--white);
+
+  padding: 45px;
+
+  border-radius: 12px;
+}
+
+.location-box h3 {
+  color: var(--gold);
+
+  font-size: 1.7rem;
+
+  margin-bottom: 15px;
+}
+
+.location-box p {
+  color: #e4eee8;
+}
+
+.location-points {
+  list-style: none;
+
+  margin-top: 20px;
+}
+
+.location-points li {
+  margin: 12px 0;
+}
+
+.location-points li::before {
+  content: "•";
+
+  color: var(--gold);
+
+  margin-right: 10px;
+}
+
+
+/* =========================================================
+   WHY NEW PALTZ - COMMUNITY
+   ========================================================= */
+
+.community {
+  padding: 90px 7%;
+
+  background: var(--white);
+}
+
+.community-content {
+  max-width: 1100px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.community h2 {
+  color: var(--green);
+
+  font-size: 2.8rem;
+
+  margin-bottom: 15px;
+}
+
+.community-intro {
+  max-width: 720px;
+
+  margin: 0 auto 45px;
+
+  color: var(--muted);
+}
+
+.community-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+
+  text-align: left;
+}
+
+.community-card {
+  border: 1px solid var(--border);
+
+  padding: 30px;
+
+  border-radius: 8px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+.community-card .emoji {
+  font-size: 2rem;
+
+  margin-bottom: 15px;
+}
+
+.community-card h3 {
+  color: var(--green);
+
+  margin-bottom: 8px;
+}
+
+.community-card p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CTA
+   Used by both pages
+   ========================================================= */
+
+.cta {
+  padding: 90px 7%;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--dark),
+      var(--green)
+    );
+
+  color: var(--white);
+}
+
+.cta h2 {
+  font-size: 3.2rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 15px;
+}
+
+.cta p {
+  max-width: 650px;
+
+  margin: 0 auto 30px;
+
+  color: #dce9e1;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  background: #061b12;
+
+  color: #b9c8bf;
+
+  padding: 40px 7%;
+
+  text-align: center;
+}
+
+footer strong {
+  color: var(--white);
+}
+
+footer p {
+  margin: 5px;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  /* Navigation */
+
+  nav {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+  }
+
+
+  /* Two-column layouts become one column */
+
+  .intro-container,
+  .academic-layout,
+  .learning-container,
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Cards */
+
+  .reason-grid,
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-grid,
+  .experience-grid,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Statistics */
+
+  .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* Images */
+
+  .academic-image,
+  .learning-image {
+    min-height: 350px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+  /* Hero */
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+
+  /* Buttons */
+
+  .secondary {
+    margin-left: 0;
+
+    margin-top: 10px;
+  }
+
+
+  /* Statistics */
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Sections */
+
+  .intro,
+  .reasons,
+  .programs,
+  .academics,
+  .learning,
+  .location,
+  .community,
+  .experience,
+  .approach,
+  .cta {
+    padding: 60px 6%;
+  }
+
+
+  /* Headings */
+
+  .intro h2 {
+    font-size: 2.3rem;
+  }
+
+  .section-title h2,
+  .community h2,
+  .approach h2 {
+    font-size: 2.3rem;
+  }
+
+  .academic-text h2,
+  .learning-text h2,
+  .location-text h2 {
+    font-size: 2.3rem;
+  }
+
+  .cta h2 {
+    font-size: 2.3rem;
+  }
+
+
+  /* Reason cards */
+
+  .reason {
+    grid-template-columns: 1fr;
+
+    padding: 28px;
+  }
+
+
+  /* Navigation */
+
+  nav {
+    padding: 16px 5%;
+  }
+
+  nav ul {
+    gap: 10px 15px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+
+  /* Images */
+
+  .academic-image,
+  .learning-image {
+    min-height: 280px;
+  }
+}

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SUNY New Paltz | Discover Your Future</title>
+
+  <style>
+    :root {
+      --green: #164a35;
+      --dark-green: #0c2d21;
+      --light-green: #eaf3ed;
+      --gold: #f4c542;
+      --white: #ffffff;
+      --gray: #66736c;
+      --light-gray: #f6f8f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1e2722;
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark-green);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 38, 27, 0.96),
+          rgba(15, 64, 43, 0.75),
+          rgba(15, 64, 43, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .hero-label {
+      color: var(--gold);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: #edf5f0;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark-green);
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Intro */
+
+    .intro {
+      padding: 90px 7%;
+      background: white;
+    }
+
+    .intro-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .intro h2 {
+      font-size: 2.8rem;
+      color: var(--green);
+      line-height: 1.15;
+    }
+
+    .intro p {
+      color: var(--gray);
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    /* Highlights */
+
+    .highlights {
+      padding: 80px 7%;
+      background: var(--light-gray);
+    }
+
+    .section-heading {
+      max-width: 1100px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+    }
+
+    .highlight-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .highlight {
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      border-bottom: 4px solid var(--green);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      background: var(--light-green);
+      color: var(--green);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .highlight h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .highlight p {
+      color: var(--gray);
+    }
+
+    /* Academics */
+
+    .academics {
+      padding: 90px 7%;
+      background: var(--green);
+      color: white;
+    }
+
+    .academic-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .academic-container h2 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    .academic-container > p {
+      max-width: 700px;
+      color: #dce9e1;
+      margin-bottom: 40px;
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .program {
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 25px;
+      min-height: 150px;
+      transition: 0.2s;
+    }
+
+    .program:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-4px);
+    }
+
+    .program h3 {
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .program p {
+      color: #e1ebe5;
+      font-size: 0.9rem;
+    }
+
+    /* Campus */
+
+    .campus {
+      padding: 90px 7%;
+      background: white;
+    }
+
+    .campus-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .campus-image {
+      min-height: 430px;
+      border-radius: 12px;
+      background:
+        linear-gradient(rgba(20, 65, 45, 0.15), rgba(20, 65, 45, 0.15)),
+        url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80")
+        center/cover;
+    }
+
+    .campus-text h2 {
+      font-size: 2.7rem;
+      color: var(--green);
+      margin-bottom: 15px;
+    }
+
+    .campus-text p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .campus-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .campus-list li {
+      margin: 12px 0;
+      font-weight: 600;
+    }
+
+    .campus-list li::before {
+      content: "✓";
+      color: var(--green);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 90px 7%;
+      background:
+        linear-gradient(
+          135deg,
+          var(--dark-green),
+          var(--green)
+        );
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #e1ebe5;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #071d14;
+      color: #b9c8bf;
+      padding: 45px 7%;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 30px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .intro-container,
+      .campus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .programs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .campus-image {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .programs {
+        grid-template-columns: 1fr;
+      }
+
+      .intro,
+      .highlights,
+      .academics,
+      .campus,
+      .cta {
+        padding: 60px 6%;
+      }
+
+      .cta h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="brand">
+      SUNY <span>New Paltz</span>
+    </div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#highlights">Why New Paltz</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#campus">Campus</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        State University of New York
+      </div>
+
+      <h1>
+        Discover what's possible.
+      </h1>
+
+      <p>
+        SUNY New Paltz brings together academic excellence,
+        creativity, community, and the beauty of New York's
+        Hudson Valley.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">
+          Explore New Paltz
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Plan a Visit
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- About -->
+  <section class="intro" id="about">
+
+    <div class="intro-container">
+
+      <div>
+        <h2>
+          A university with room to grow.
+        </h2>
+      </div>
+
+      <div>
+        <p>
+          SUNY New Paltz is a public university located in
+          New Paltz, New York, in the heart of the Hudson Valley.
+        </p>
+
+        <p>
+          Students can combine a strong academic foundation
+          with opportunities for research, creativity,
+          leadership, and hands-on experiences.
+        </p>
+
+        <p>
+          The university's location also places students close
+          to mountains, trails, historic communities, arts,
+          culture, and the natural beauty of the Hudson Valley.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Highlights -->
+  <section class="highlights" id="highlights">
+
+    <div class="section-heading">
+      <h2>Why SUNY New Paltz?</h2>
+
+      <p>
+        More than a classroom — it's an environment designed
+        for discovery and connection.
+      </p>
+    </div>
+
+    <div class="highlight-grid">
+
+      <div class="highlight">
+
+        <div class="icon">🎓</div>
+
+        <h3>Academic Opportunities</h3>
+
+        <p>
+          Explore a broad selection of undergraduate and
+          graduate areas of study across many disciplines.
+        </p>
+
+      </div>
+
+
+      <div class="highlight">
+
+        <div class="icon">🌄</div>
+
+        <h3>Hudson Valley Location</h3>
+
+        <p>
+          Enjoy a campus surrounded by the distinctive
+          landscapes and communities of the Hudson Valley.
+        </p>
+
+      </div>
+
+
+      <div class="highlight">
+
+        <div class="icon">🎨</div>
+
+        <h3>Creative Community</h3>
+
+        <p>
+          Find opportunities to create, perform, collaborate,
+          experiment, and share your ideas.
+        </p>
+
+      </div>
+
+
+      <div class="highlight">
+
+        <div class="icon">🔬</div>
+
+        <h3>Research & Discovery</h3>
+
+        <p>
+          Gain experience asking questions, solving problems,
+          and contributing to research and scholarship.
+        </p>
+
+      </div>
+
+
+      <div class="highlight">
+
+        <div class="icon">🤝</div>
+
+        <h3>Campus Community</h3>
+
+        <p>
+          Connect with classmates, organizations, faculty,
+          and communities that can shape your college experience.
+        </p>
+
+      </div>
+
+
+      <div class="highlight">
+
+        <div class="icon">🚀</div>
+
+        <h3>Prepare for the Future</h3>
+
+        <p>
+          Build skills, confidence, and experiences that can
+          help you move toward your next goal.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Academics -->
+  <section class="academics" id="academics">
+
+    <div class="academic-container">
+
+      <h2>Explore Academics</h2>
+
+      <p>
+        Discover disciplines that can help you turn your
+        interests into knowledge, skills, and future opportunities.
+      </p>
+
+      <div class="programs">
+
+        <div class="program">
+          <h3>Business</h3>
+          <p>
+            Develop knowledge in business, management,
+            economics, and entrepreneurship.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Education</h3>
+          <p>
+            Prepare for careers focused on teaching,
+            learning, and educational leadership.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Science</h3>
+          <p>
+            Study scientific disciplines through
+            investigation, experimentation, and research.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Arts</h3>
+          <p>
+            Develop your creative voice through visual
+            and performing arts.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Engineering</h3>
+          <p>
+            Build technical and analytical skills
+            through engineering and technology.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Humanities</h3>
+          <p>
+            Explore history, literature, philosophy,
+            languages, and human culture.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Social Sciences</h3>
+          <p>
+            Understand people, communities, societies,
+            and the world around us.
+          </p>
+        </div>
+
+        <div class="program">
+          <h3>Interdisciplinary Studies</h3>
+          <p>
+            Connect ideas from different fields to
+            approach complex questions.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Campus -->
+  <section class="campus" id="campus">
+
+    <div class="campus-grid">
+
+      <div class="campus-image"></div>
+
+      <div class="campus-text">
+
+        <h2>
+          Experience campus life.
+        </h2>
+
+        <p>
+          College is about more than your major. SUNY New Paltz
+          offers students opportunities to get involved,
+          meet new people, and explore interests outside
+          the classroom.
+        </p>
+
+        <p>
+          From student organizations and campus events to
+          arts, athletics, recreation, and outdoor activities,
+          there are many ways to make the university your own.
+        </p>
+
+        <ul class="campus-list">
+          <li>Student clubs and organizations</li>
+          <li>Arts and cultural events</li>
+          <li>Athletics and recreation</li>
+          <li>Outdoor activities</li>
+          <li>Leadership opportunities</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Call to Action -->
+  <section class="cta" id="contact">
+
+    <h2>Ready to explore?</h2>
+
+    <p>
+      Learn more about SUNY New Paltz, explore academic
+      programs, discover campus life, and plan your next step.
+    </p>
+
+    <a
+      href="https://www.newpaltz.edu/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary"
+    >
+      Visit the Official Website
+    </a>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+        <h3>SUNY New Paltz</h3>
+        <p>
+          State University of New York at New Paltz
+        </p>
+      </div>
+
+      <div>
+        <h3>Location</h3>
+        <p>
+          New Paltz, New York
+        </p>
+        <p>
+          Hudson Valley
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <p>
+          Academics • Campus Life • Admissions
+        </p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 SUNY New Paltz Web Project
+    </div>
+
+  </footer>
+
+</body>
+</html>
