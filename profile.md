@@ -21,6 +21,7 @@ To make sure I stay on track for this semester I plan on doing the following:
 You can find my class projects for what we do this semester and my LinkedIn here:
 * https://github.com/Jaydenortiz08/Web-Page-Design
 * I have a LinkedIn on my phone; I just don't know how to paste it here on my computer. Just search up my name and you should fine me.
+* I don't have the file for my favorite project because it was on a school Chromebook which I don't have access to anymore. But it was a samurai sword.
 
 ### Blockquote
 "Programming isn't about what you know; its about what you can figure out." - Chris Pine, author of "Learn to Program"
@@ -28,3 +29,7 @@ You can find my class projects for what we do this semester and my LinkedIn here
 
 
 ### Semester Milestones
+[x] Be able to pass the class.
+[x] Be able to get a better understanding of GitHub and other softwares.
+[ ] Get good grades in this class.
+[ ] Learn something new about softwares that I haven't learned about.
